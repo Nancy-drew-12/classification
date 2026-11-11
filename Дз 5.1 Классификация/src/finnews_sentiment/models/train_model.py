@@ -35,7 +35,7 @@ def build_baseline_pipeline() -> Pipeline:
 def train_baseline(
     df: pd.DataFrame,
     text_col: str = "text_clean",
-    target_col: str = "sentiment",
+    target_col: str = "label",
     test_size: float = 0.2,
     random_state: int = 42,
 ) -> Tuple[Pipeline, float]:
