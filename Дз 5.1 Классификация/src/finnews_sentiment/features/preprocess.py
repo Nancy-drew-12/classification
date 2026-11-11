@@ -19,6 +19,8 @@ STOPWORDS = set(stopwords.words("english"))
 LEMMATIZER = WordNetLemmatizer()
 
 
+LABEL_NAMES = {0: "World", 1: "Sports", 2: "Business", 3: "Sci/Tech"}
+
 TICKER_PATTERN = re.compile(r"\b[A-Z]{2,6}\b")  # грубое приближение тикеров
 
 
@@ -36,13 +38,15 @@ def preprocess_text(text: str) -> str:
     if not isinstance(text, str):
         return ""
 
-    txt = text.lower()
+    # артефакты AG News: #39; quot; amp;
+    txt = re.sub(r"\s?#39;", "'", text)
+    txt = re.sub(r"\s?(quot|amp|lt|gt);", " ", txt)
+    txt = txt.replace("\\", " ")
+
+    txt = txt.lower()
 
     # простое удаление HTML тегов
     txt = re.sub(r"<.*?>", " ", txt)
-
-    # замена тикеров
-    txt = TICKER_PATTERN.sub(" <TICKER> ", txt)
 
     # удаление цифр и пунктуации
     txt = txt.translate(str.maketrans("", "", string.digits))
@@ -80,3 +84,12 @@ def add_basic_features(df: pd.DataFrame, text_col: str = "text_clean") -> pd.Dat
     df["number_count"] = df["text"].astype(str).str.findall(r"\d+(?:\.\d+)?").apply(len)
 
     return df
+
+def prepare_dataset(df: pd.DataFrame, text_col: str = "text", label_col: str = "label") -> pd.DataFrame:
+    """Очистка + удаление пустых и дублей + метки классов."""
+    df = clean_news_data(df, text_col=text_col)
+    df = df[df["text_clean"].str.split().str.len() >= 3]
+    df = df.drop_duplicates(subset="text_clean")
+    df["label"] = df[label_col].astype(int)
+    df["label_name"] = df["label"].map(LABEL_NAMES)
+    return df.reset_index(drop=True)
