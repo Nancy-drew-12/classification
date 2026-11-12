@@ -1,0 +1,10 @@
+experiment,accuracy,macro_f1,time_sec,vs_baseline
+"4. tfidf 50000 + linear svm, C=0.3",0.9227,0.9225,8.7,0.0168
+3. raw text + tfidf 50000 + linear svm,0.9222,0.922,15.9,0.0163
+2a. tfidf 50000 + linear svm,0.9197,0.9196,12.2,0.0139
+"4. tfidf 50000 + linear svm, C=1",0.9197,0.9196,9.1,0.0139
+"4. tfidf 50000 + linear svm, C=0.1",0.9187,0.9184,11.2,0.0127
+1. tfidf 50000 + sublinear + logreg,0.9173,0.9171,11.2,0.0114
+"4. tfidf 50000 + linear svm, C=3",0.9113,0.9111,9.7,0.0054
+2b. tfidf 50000 + complement nb,0.9087,0.9082,8.0,0.0025
+"0. baseline: tfidf 5000, 1-2gram + logreg",0.9059,0.9057,9.6,0.0
