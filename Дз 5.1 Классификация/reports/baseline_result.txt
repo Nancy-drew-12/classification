@@ -1,0 +1,2 @@
+Baseline Macro F1: 0.6809
+Baseline Accuracy: 0.8012

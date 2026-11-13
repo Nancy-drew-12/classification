@@ -1,0 +1,55 @@
+Модель: word+char tfidf + logreg balanced, C=3
+Ошибок: 167 из 961 (17.4%)
+
+Частые пары ошибок (правда -> модель):
+sentiment  pred_name
+positive   neutral      64
+neutral    positive     51
+positive   negative     21
+negative   positive     20
+           neutral       6
+neutral    negative      5
+
+Примеры ошибок:
+
+=== positive -> neutral ===
+- Nevertheless , Fitch notes that the business fundamentals of the three banks currently remain sound .
+- Elisa said mobile subscriptions grew 7 percent during 2007 , mainly because of customers adopting so-called third generation mobile technology .
+- Basware Corporation stock exchange release August 31 , 2010 at 16:25 Basware signed a large deal with an international industrial group Basware will deliver Invoice Automation solution and Connectivity Services to an international industrial group .
+- Finnish energy company Fortum Oyj said on November 13 , 2007 it was granted an environmental permit to build a biofuel-fired combined heat and power CHP plant in Vartan harbor in eastern Stockholm .
+- The company is now intensifying its smelter operations and increasing its annual production capacity to 230,000 tonnes of copper .
+
+=== neutral -> positive ===
+- Sales were down 14 per cent in Finland and up 27 per cent abroad where sales were lifted by the strong growth in sales in Russia and Lithuania .
+- To see a slide show of all the newest product releases from Fiskars .
+- Rihko started to manage Raisio 's Benecol business in summer 2006 after heading tobacco company Altadis ' European operations .
+- Net loss in the same period in 2009 was euro18 .6 million .
+- Aviva shuts Friends Life head office in rapid integration move
+
+=== positive -> negative ===
+- $JNK http://stks.co/2Fcm Does not want to go down... risk appetite still high
+- InterContinental Hotels Group share price climbs on $1.5bn special dividend
+- $FIO won't stay down
+- FTSE rallies off three-month low, boosted by StanChart, Sainsbury
+- AstraZeneca share price: Acerta deal pays off with orphan drug status
+
+=== negative -> positive ===
+- $GPS Gap September Comparable Store Sales -4%
+- $TWTR The best scenario going forward is this stock slowly falling everyday....Which is quite probable...
+- Berkshire discloses unit's ties to Iran, opens probe
+- Key price to watch in $NFLX, off the previous double top reject, 218.23 http://stks.co/sIYn
+- UPDATE 1-Lloyds to cut 945 jobs as part of 3-year restructuring plan
+
+=== negative -> neutral ===
+- $AMD big dumping... would not touch it for a while
+- $AMRN You can many times find top and bottoms when shorts start rejoicing or bulls start rejoicing. Currently it is the shorts rejoicing
+- Casinos red before the bell: $LVS -0.75%, $WYNN -0.47%, $WYNN -0.47% > unusual comibinations of what's running, what's red before the bell
+- $BBRY Actually lost .03c per share if U incl VZ as no debt and 3.1 in Cash.
+- Diageo sales disappoint as currency and comparatives leave bitter taste
+
+=== neutral -> negative ===
+- This one was at one time targeted for June 5 , but if we had to guess , it 's been pushed back -- maybe we 're crazy , but we feel like it has n't leaked enough to meet that date at this point .
+- $AAPL broke descending channel....will it hold?
+- $BABA may take a few days wks months watch what happened to $FB $TWTR after they IPO. mrkt needs to washout. to hunt well need 2 wait stalk.
+- Sold some $TSLA Puts this morning Closed them at the close. Helps pay for monthly expenses
+- Only L+ñnnen Tehtaat showed a loss , but it has only recently started streamlining measures .

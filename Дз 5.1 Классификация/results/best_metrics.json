@@ -1,5 +1,6 @@
 {
-  "model": "tfidf 50000 1-2gram sublinear + linear svm C=0.3",
-  "test_accuracy": 0.9218,
-  "test_macro_f1": 0.9217
+  "model": "word+char tfidf + logreg balanced, C=3",
+  "test_macro_f1": 0.7631,
+  "test_accuracy": 0.8262,
+  "improvement_%": 12.1
 }

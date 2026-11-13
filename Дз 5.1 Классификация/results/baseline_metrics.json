@@ -1,6 +1,5 @@
 {
   "model": "tfidf(5000, 1-2gram) + logreg",
-  "valid_macro_f1": 0.9057,
-  "test_accuracy": 0.9021,
-  "test_macro_f1": 0.9019
+  "test_macro_f1": 0.6809,
+  "test_accuracy": 0.8012
 }
